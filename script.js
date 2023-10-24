@@ -14,6 +14,7 @@
  * * 3-Write a function called game() using the prev. function inside this one to play a 5 round game.
  *      TODO: Use a loop to call the function.
  */
+game();
 
 function getComputerChoice() {
   //**Implementing the computer random choice. **/
@@ -62,5 +63,10 @@ function playRound() {
     );
   }
 }
-const result = playRound();
-console.log(result);
+//**Function for playing the game 5 times and then logging the result.**/
+function game() {
+  for (let i = 0; i < 5; i++) {
+    const result = playRound();
+    console.log(result);
+  }
+}
