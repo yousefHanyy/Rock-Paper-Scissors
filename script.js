@@ -1,72 +1,55 @@
-/**
- *   ! Rock paper scissors against the computer
- *
- * * 1-Make a function named getComputerChoice() that gets and returns the computer's choice.
- *      TODO: Make an array that has the three values(rock, paper, scissors).
- *      TODO: Get a random number through math.random to choose a random choice (rock, paper or scissors).
- *
- * * 2-Make a function playRound() that plays a single round of the game then returns a result for example ('You lose. Paper beats Rock!').
- *      ? Function should take two parameters:
- *          TODO: (playerSelection, computerSelection)
- *          TODO: playerSelection value should be taken through a prompt.
- *          TODO: computerSelection value is taken from the getComputerChoice() return value.
- *
- * * 3-Write a function called game() using the prev. function inside this one to play a 5 round game.
- *      TODO: Use a loop to call the function.
- */
-game();
+// game();
+
+const rockBtn = document.querySelector("#Rock");
+const paperBtn = document.querySelector("#Paper");
+const scissorsBtn = document.querySelector("#Scissors");
+
+const rockClicked = rockBtn.addEventListener("click", playRound);
+const paperClicked = paperBtn.addEventListener("click", playRound);
+const scissorsClicked = scissorsBtn.addEventListener("click", playRound);
 
 function getComputerChoice() {
-  //**Implementing the computer random choice. **/
+  const computerImg = document.querySelector("#computerChoice");
+  computerImg.innerHTML = "";
+  const computerChoice = document.createElement("img");
+  computerChoice.classList.add("choiceImages");
   const gameArray = ["Rock", "Paper", "Scissors"];
   let randomIndex = Math.floor(Math.random() * gameArray.length);
   const randomValue = gameArray[randomIndex];
-  return randomValue.toLowerCase();
+  if (randomValue === "Rock") {
+    computerChoice.src = "images/rock.png";
+    computerImg.appendChild(computerChoice);
+  } else if (randomValue === "Paper") {
+    computerChoice.src = "images/paper.png";
+    computerImg.appendChild(computerChoice);
+  } else if (randomValue === "Scissors") {
+    computerChoice.src = "images/scissors.png";
+    computerImg.appendChild(computerChoice);
+  }
 }
 
-function playRound() {
-  const userInput = prompt(
-    "Please enter your choice (Rock, Paper or Scissors)",
-    "Rock"
-  );
-  const playerSelection = userInput.toLowerCase();
-  const computerSelection = getComputerChoice();
-
+function playRound(event) {
+  const playerImage = document.querySelector("#playerChoice");
+  playerImage.innerHTML = "";
+  const choiceImg = document.createElement("img");
+  choiceImg.classList.add("choiceImages");
   //**The logic for the game round **/
-  if (playerSelection === computerSelection) {
-    return (
-      "Player chose: " +
-      playerSelection +
-      " Computer chose: " +
-      computerSelection +
-      "\nThe result is: Draw!"
-    );
-  } else if (
-    (playerSelection == "rock") & (computerSelection == "paper") ||
-    (playerSelection == "scissors") & (computerSelection == "rock") ||
-    (playerSelection == "paper") & (computerSelection == "scissors")
-  ) {
-    return (
-      "Player chose: " +
-      playerSelection +
-      " Computer chose: " +
-      computerSelection +
-      "\nThe result is: Computer wins!"
-    );
-  } else {
-    return (
-      "Player chose: " +
-      playerSelection +
-      " Computer chose: " +
-      computerSelection +
-      "\nThe result is: Player wins!"
-    );
+  let playerSelection = event.target.id;
+  if (playerSelection === "Rock") {
+    choiceImg.src = "images/rock.png";
+    playerImage.appendChild(choiceImg);
+  } else if (playerSelection === "Paper") {
+    choiceImg.src = "images/paper.png";
+    playerImage.appendChild(choiceImg);
+  } else if (playerSelection === "Scissors") {
+    choiceImg.src = "images/scissors.png";
+    playerImage.appendChild(choiceImg);
   }
+  getComputerChoice();
 }
 //**Function for playing the game 5 times and then logging the result.**/
-function game() {
-  for (let i = 0; i < 5; i++) {
-    const result = playRound();
-    console.log(result);
-  }
-}
+//!We will change the below code to let the game count whoever gets 5 points first and based on that determines the result.
+// function game() {
+//   const result = playRound();
+//   console.log(result);
+// }

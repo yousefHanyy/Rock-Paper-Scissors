@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+}
+.mainContainer {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 30px auto;
+  width: 1100px;
+  height: auto;
+  border-radius: 15px;
+}
+.choiceContainer {
+  display: flex;
+  justify-content: center;
+  gap: 65px;
+  padding: 50px 15px;
+}
+.choices {
+  padding: 13px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.choices:hover {
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+.resultsContainer {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 30px;
+}
+#computerContainer {
+  text-align: center;
+}
+#playerContainer {
+  text-align: center;
+}
+.choiceImages {
+  height: 150px;
+  width: auto;
+}
