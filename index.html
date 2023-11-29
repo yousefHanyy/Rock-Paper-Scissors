@@ -9,11 +9,11 @@
   <body>
     <!--
         1-Create three buttons one for each selection (ROCK PAPER SCISSORS)
-        todo 2-Add an event listener to the buttons that call your 'playRound' function with the correct 'playerSelection' EVERY TIME A BUTTON IS CLICKED
+        2-Add an event listener to the buttons that call your 'playRound' function with the correct 'playerSelection' EVERY TIME A BUTTON IS CLICKED
               We have to add an event listener corresponding to every choice (rock,paper or scissors)
               |Each choice should call the right playerSelection everytime it is clicked.
                 |Name a variable that takes a playerSelection each time a corresponding button is clicked.
-        todo 3-Add a Div for displaying the results and change all of your console.logs into DOM methods
+       3-Add a Div for displaying the results and change all of your console.logs into DOM methods
         todo 4-Display the running score and announce a winner of the game once one player reaches 5 points.
     -->
     <div class="mainContainer">
@@ -28,16 +28,18 @@
             <h4 style="font-size: 25px">Computer</h4>
           </div>
           <div id="computerChoice"></div>
+          <div id="computerPointsDiv"></div>
           <!-- The below span element should get updated based on the score -->
-          <!-- <span style="font-size: 25px" id="computerPoints"></span> -->
+          <!-- <div style="font-size: 25px" id="computerPoints">points</div> -->
         </div>
         <div id="playerContainer">
           <div>
             <h4 style="font-size: 25px">Player</h4>
           </div>
           <div id="playerChoice"></div>
+          <div id="#playerPointsDiv"></div>
           <!-- The below span element should get updated based on the score -->
-          <!-- <span style="font-size: 25px" id="playerPoints"></span> -->
+          <!-- <div style="font-size: 25px" id="playerPoints">points</div> -->
         </div>
       </div>
     </div>
